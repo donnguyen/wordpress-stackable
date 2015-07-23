@@ -11,6 +11,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
+RUN sed -i "s/upload_max_filesize.*/upload_max_filesize = 100M/g" /etc/php5/apache2/php.ini
+RUN sed -i "s/post_max_size.*/post_max_size = 100M/g" /etc/php5/apache2/php.ini
 RUN a2enmod rewrite
 ADD wp-config.php /app/wp-config.php
 ADD run.sh /run.sh
