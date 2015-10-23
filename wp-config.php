@@ -71,6 +71,8 @@ $table_prefix  = 'wp_';
  */
 define('WPLANG', '');
 
+define( 'WP_MEMORY_LIMIT', '96M' );
+
 /**
  * For developers: WordPress debugging mode.
  *
